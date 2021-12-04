@@ -17,4 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+var port = 9090;
+app.listen(port);
+console.log(`Listening on port ${port}`);
+
 module.exports = app;

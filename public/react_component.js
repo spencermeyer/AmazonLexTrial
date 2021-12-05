@@ -17,23 +17,38 @@ var ActionButton = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (ActionButton.__proto__ || Object.getPrototypeOf(ActionButton)).call(this, props));
 
     _this.state = { liked: false };
-    _this.state.data = {};
+    _this.state.data = { 'starting data': 'foo' };
     return _this;
   }
 
   _createClass(ActionButton, [{
     key: 'getData',
     value: function getData() {
+      var _this2 = this;
+
+      // Axios would be better.
       console.log('this is getdata');
+      var xhr = new XMLHttpRequest();
+      xhr.addEventListener('load', function () {
+        // console.log(xhr.responseText);
+        _this2.setState({ data: xhr.responseText });
+      });
+      // xhr.open('GET', "http://localhost:9090/users");
+      xhr.open('GET', "http://localhost:9090/lookup?number=07803937331");
+      xhr.send();
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       if (this.state.liked) {
         return 'You liked this.';
       }
+
+      var data = this.state.data;
+
+      console.log(data);
 
       return React.createElement(
         'div',
@@ -41,22 +56,50 @@ var ActionButton = function (_React$Component) {
         React.createElement(
           'button',
           { onClick: function onClick() {
-              return _this2.setState({ liked: true });
+              return _this3.setState({ liked: true });
             } },
           'Like'
         ),
         React.createElement(
           'button',
           { onClick: function onClick() {
-              return _this2.getData();
+              return _this3.getData();
             } },
           'GetData'
-        )
+        ),
+        React.createElement(TextEntyArea, { data: this.state.data })
       );
     }
   }]);
 
   return ActionButton;
+}(React.Component);
+
+var TextEntyArea = function (_React$Component2) {
+  _inherits(TextEntyArea, _React$Component2);
+
+  function TextEntyArea(props) {
+    _classCallCheck(this, TextEntyArea);
+
+    return _possibleConstructorReturn(this, (TextEntyArea.__proto__ || Object.getPrototypeOf(TextEntyArea)).call(this, props));
+  }
+
+  _createClass(TextEntyArea, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'text-entry' },
+        React.createElement(
+          'p',
+          null,
+          JSON.stringify(this.props.data)
+        )
+      );
+    }
+  }]);
+
+  return TextEntyArea;
 }(React.Component);
 
 var domContainer = document.querySelector('#action_button_container');

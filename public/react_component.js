@@ -22,6 +22,11 @@ var ActionButton = function (_React$Component) {
   }
 
   _createClass(ActionButton, [{
+    key: 'getData',
+    value: function getData() {
+      console.log('this is getdata');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -31,11 +36,22 @@ var ActionButton = function (_React$Component) {
       }
 
       return React.createElement(
-        'button',
-        { onClick: function onClick() {
-            return _this2.setState({ liked: true });
-          } },
-        'Like'
+        'div',
+        null,
+        React.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this2.setState({ liked: true });
+            } },
+          'Like'
+        ),
+        React.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this2.getData();
+            } },
+          'GetData'
+        )
       );
     }
   }]);

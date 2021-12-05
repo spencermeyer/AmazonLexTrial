@@ -7,15 +7,26 @@ class ActionButton extends React.Component {
     this.state.data = {};
   }
 
+  getData() {
+    console.log('this is getdata');
+  }
+
+
+
   render() {
     if (this.state.liked) {
       return 'You liked this.';
     }
 
     return (
-      <button onClick={() => this.setState({ liked: true }) }>
-        Like
-      </button>
+      <div>
+        <button onClick={() => this.setState({ liked: true }) }>
+          Like
+        </button>
+        <button onClick={() => this.getData() }>
+          GetData
+        </button>
+      </div>
     );
   }
 }

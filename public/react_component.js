@@ -1,27 +1,47 @@
 'use strict';
 
-const e = React.createElement;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class ActionButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { liked: false };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ActionButton = function (_React$Component) {
+  _inherits(ActionButton, _React$Component);
+
+  function ActionButton(props) {
+    _classCallCheck(this, ActionButton);
+
+    var _this = _possibleConstructorReturn(this, (ActionButton.__proto__ || Object.getPrototypeOf(ActionButton)).call(this, props));
+
+    _this.state = { liked: false };
+    _this.state.data = {};
+    return _this;
   }
 
-  render() {
-    if (this.state.liked) {
-      return 'You liked this.';
+  _createClass(ActionButton, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      if (this.state.liked) {
+        return 'You liked this.';
+      }
+
+      return React.createElement(
+        'button',
+        { onClick: function onClick() {
+            return _this2.setState({ liked: true });
+          } },
+        'Like'
+      );
     }
+  }]);
 
-    return e(
-      'button',
-      { onClick: () => this.setState({ liked: true }) },
-      'Like'
-    );
-  }
-}
+  return ActionButton;
+}(React.Component);
 
-
-const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(e(ActionButton), domContainer);
-
+var domContainer = document.querySelector('#action_button_container');
+ReactDOM.render(React.createElement(ActionButton, null), domContainer);

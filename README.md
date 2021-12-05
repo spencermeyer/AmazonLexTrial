@@ -1,4 +1,5 @@
 An exercise in using APIs
+-------------------------
 
 This was created using:
   `express AmazonLexTrial --no-view`
@@ -10,6 +11,10 @@ or
 it also runs with `node app.js` and `yarn start` (the latter because of the start script in package.json).
 
 The app appears in `localhost:9090`
+
+Compiling JSX
+-------------
+Need to run `npx babel --watch src --out-dir public/ --presets react-app/prod` in a separate process to hot re-compile jsx.
 
 
 Using in browser react, followed the quick set up here:  https://reactjs.org/docs/add-react-to-a-website.html#optional-try-react-with-jsx

@@ -10,6 +10,7 @@ const vonage = new Vonage({
 /* lookup with Vonage Number Insight API */
 router.get('/', function(req, res, next) {
   vonage.numberInsight.get({level: 'advancedSync', number: "447803937331"}, (error, result) => {
+    // improvement.  use req.query.number to get query params
     if(error) {
       console.error(error);
     }

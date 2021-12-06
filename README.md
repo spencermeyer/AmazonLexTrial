@@ -14,10 +14,7 @@ The app appears in `localhost:9090`
 
 Compiling JSX
 -------------
-Need to run `npx babel --watch src --out-dir public/ --presets react-app/prod` in a separate process to hot re-compile jsx.
-
-
-Using in browser react, followed the quick set up here:  https://reactjs.org/docs/add-react-to-a-website.html#optional-try-react-with-jsx
+Need to run `npx babel --watch src --out-dir public/ --presets react-app/prod` in a separate process to hot re-compile jsx.  (see https://reactjs.org/docs/add-react-to-a-website.html)
 
 There are really good documents about node here:
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs

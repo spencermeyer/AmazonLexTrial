@@ -67,7 +67,7 @@ var ActionButton = function (_React$Component) {
             } },
           'GetData'
         ),
-        React.createElement(TextEntyArea, { data: this.state.data })
+        React.createElement(TextEntryArea, { data: this.state.data })
       );
     }
   }]);
@@ -75,16 +75,16 @@ var ActionButton = function (_React$Component) {
   return ActionButton;
 }(React.Component);
 
-var TextEntyArea = function (_React$Component2) {
-  _inherits(TextEntyArea, _React$Component2);
+var TextEntryArea = function (_React$Component2) {
+  _inherits(TextEntryArea, _React$Component2);
 
-  function TextEntyArea(props) {
-    _classCallCheck(this, TextEntyArea);
+  function TextEntryArea(props) {
+    _classCallCheck(this, TextEntryArea);
 
-    return _possibleConstructorReturn(this, (TextEntyArea.__proto__ || Object.getPrototypeOf(TextEntyArea)).call(this, props));
+    return _possibleConstructorReturn(this, (TextEntryArea.__proto__ || Object.getPrototypeOf(TextEntryArea)).call(this, props));
   }
 
-  _createClass(TextEntyArea, [{
+  _createClass(TextEntryArea, [{
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -99,7 +99,7 @@ var TextEntyArea = function (_React$Component2) {
     }
   }]);
 
-  return TextEntyArea;
+  return TextEntryArea;
 }(React.Component);
 
 var domContainer = document.querySelector('#action_button_container');

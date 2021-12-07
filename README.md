@@ -21,5 +21,20 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment
 
+ToDo:
+-----
+
+To get the reading of the response into react, will have to install the library into react, using npm.  i.e. need to create a react app.  https://www.npmjs.com/package/aws-sdk
+
+To create a react app in the project:
+https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
+
+(the proxy thing is the trick)
+
+
+
+
+
+
 
 

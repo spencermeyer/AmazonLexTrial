@@ -36,14 +36,14 @@ class ActionButton extends React.Component {
         <button onClick={() => this.getData() }>
           GetData
         </button>
-        <TextEntyArea data = {this.state.data}/>
+        <TextEntryArea data = {this.state.data}/>
       </div>
     );
   }
 }
 
 
-class TextEntyArea extends React.Component {
+class TextEntryArea extends React.Component {
     constructor(props){
       super(props)
     }
@@ -56,8 +56,6 @@ class TextEntyArea extends React.Component {
         )
     }
 }
-
-
 
 let domContainer = document.querySelector('#action_button_container');
 ReactDOM.render(<ActionButton />, domContainer);

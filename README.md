@@ -31,7 +31,7 @@ https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-
 
 (the proxy thing is the trick)
 
-
+For some reason the client serves on http://192.168.0.34:9091  (not localhost)
 
 
 

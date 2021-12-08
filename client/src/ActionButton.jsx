@@ -1,6 +1,6 @@
-'use strict';
+import React from 'react';
 
-class ActionButton extends React.Component {
+export default class ActionButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = { liked: false };

@@ -102,5 +102,5 @@ var TextEntryArea = function (_React$Component2) {
   return TextEntryArea;
 }(React.Component);
 
-var domContainer = document.querySelector('#action_button_container');
-ReactDOM.render(React.createElement(ActionButton, null), domContainer);
+// let domContainer = document.querySelector('#action_button_container');
+// ReactDOM.render(<ActionButton />, domContainer);

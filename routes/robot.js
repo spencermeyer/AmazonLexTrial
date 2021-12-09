@@ -2,10 +2,9 @@ AWS = require('aws-sdk');
 var express = require('express');
 var router = express.Router();
 
-// these should be sent to env vars TODO
 AWS.config.region = 'eu-west-2'; // Region
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'eu-west-2:4d686157-07e1-4861-a408-01111f511a15',
+    IdentityPoolId: process.env['AWS_LEXBOT_IDENTITY_POOL_ID'],
 });
 
 var lexruntime = new AWS.LexRuntime();

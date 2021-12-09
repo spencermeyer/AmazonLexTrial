@@ -7,7 +7,7 @@ This was created using:
 Server
 ------
 Run it like this:
-  `npm start`
+  `npm start`  / `yarn start`
 or
   `DEBUG=AmazonlexTutorial:* npm start`
 it also runs with `node app.js` and `yarn start` (the latter because of the start script in package.json).
@@ -21,7 +21,7 @@ Run it like this:
 
 Compiling JSX
 -------------
-Need to run `npx babel --watch src --out-dir public/ --presets react-app/prod` in a separate process to hot re-compile jsx.  (see https://reactjs.org/docs/add-react-to-a-website.html)
+On the server side, we need to run `npx babel --watch src --out-dir public/ --presets react-app/prod` in a separate process to hot re-compile jsx.  (see https://reactjs.org/docs/add-react-to-a-website.html)
 
 There are really good documents about node here:
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs

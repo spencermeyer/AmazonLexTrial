@@ -1,25 +1,22 @@
 import React from 'react';
-import AWS from 'aws-sdk';
+import axios from 'axios';
 
 export default class Robot extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
+    this.state.data = {};
     this.pushChat = this.pushChat.bind(this);
     this.showResponse = this.showResponse.bind(this);
     this.showRequest = this.showRequest.bind(this);
-    // this.state.data = {'starting data': 'foo'};
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
   }
 
   pushChat() {
-    AWS.config.region = 'eu-west-2'; // Region
-    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-        IdentityPoolId: 'eu-west-2:4d686157-07e1-4861-a408-01111f511a15',
-    });
-    var lexruntime = new AWS.LexRuntime();
-    var lexUserId = 'chatbot-demo' + Date.now();
-    var sessionAttributes = {};
     console.log('this is push chat');
-
     var wisdomText = document.getElementById('wisdom');
 
     if (wisdomText && wisdomText.value && wisdomText.value.trim().length > 0) {
@@ -27,33 +24,15 @@ export default class Robot extends React.Component {
       console.log('this is wisdom   ' + wisdom); // all good
       wisdomText.value = '...';
       wisdomText.locked = true;
-      // send it to the Lex runtime
-      var params = {
-          botAlias: '$LATEST',
-          botName: 'spencerTestBot',
-          inputText: wisdom,
-          userId: lexUserId,
-          sessionAttributes: sessionAttributes
-      };
-      this.showRequest(wisdom);
+      // this.showRequest(wisdom);
+      console.log('about to request');
 
-
-      lexruntime.postText(params, function(err, data) {
-          if (err) {
-              console.log('this is err  ' + err, err.stack);
-              this.showError('Error:  ' + err.message + ' (see console for details)')
-          }
-          if (data) {
-              console.log('showing data  ' + data);
-              // capture the sessionAttributes for the next cycle
-              sessionAttributes = data.sessionAttributes;
-              // show response and/or error/dialog status
-              this.showResponse(data);
-          }
-          // re-enable input
-          wisdomText.value = '';
-          wisdomText.locked = false;
-      });
+      const url = "http://localhost:9090/robot?text="+wisdom;
+      const newData = async () => {
+        const resp = await axios.get(url);
+        this.setState({data: resp})
+      }
+      newData();
     }
     return false;
   }

@@ -20,11 +20,6 @@ class ActionButton extends React.Component {
   }
 
   render() {
-    console.log('hello from action button');
-    if (this.state.liked) {
-      return 'You liked this.';
-    }
-
     const { data } = this.state;
     console.log(data)
 

@@ -1,8 +1,16 @@
 An exercise in using APIs
 -------------------------
 
-This was created using:
+I'm using AWS Lex and the Nexmo phone number lookup.
+
+
+The server was created using:
   `express AmazonLexTrial --no-view`
+and the front end was created using `create-react-app`.
+
+INSTRUCTIONS FOR START UP
+-------------------------
+(if this is the first time, run `yarn install` / `npm install`)
 
 Server
 ------
@@ -17,7 +25,11 @@ The server app appears in `localhost:9090`
 Client
 ------
 Run it like this:
+`cd client`
 `yarn start`
+
+The client app appears in `localhost:9091`
+
 
 Compiling JSX
 -------------
@@ -31,12 +43,10 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/develo
 ToDo:
 -----
 
-To get the reading of the response into react, will have to install the library into react, using npm.  i.e. need to create a react app.  https://www.npmjs.com/package/aws-sdk
+Fix the problem with the client side re-rendering and cancelling the ajax call when the first aws call is made.
 
-To create a react app in the project:
-https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
-
-(the proxy thing is the trick)
+Info
+----
 
 The client serves on http://192.168.0.34:9091  or http://localhost:9091/
 The server serves on http://192.168.0.34:9090  or http://localhost:9090/

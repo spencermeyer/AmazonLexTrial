@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ActionButton from './ActionButton'
+import Robot from './Robot'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <ActionButton/>
+        <Robot/>
       </header>
     </div>
   );

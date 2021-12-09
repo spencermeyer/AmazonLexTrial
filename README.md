@@ -4,13 +4,20 @@ An exercise in using APIs
 This was created using:
   `express AmazonLexTrial --no-view`
 
+Server
+------
 Run it like this:
   `npm start`
 or
   `DEBUG=AmazonlexTutorial:* npm start`
 it also runs with `node app.js` and `yarn start` (the latter because of the start script in package.json).
 
-The app appears in `localhost:9090`
+The server app appears in `localhost:9090`
+
+Client
+------
+Run it like this:
+`yarn start`
 
 Compiling JSX
 -------------
@@ -32,6 +39,6 @@ https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-
 (the proxy thing is the trick)
 
 The client serves on http://192.168.0.34:9091  or http://localhost:9091/
-
+The server serves on http://192.168.0.34:9090  or http://localhost:9090/
 
 

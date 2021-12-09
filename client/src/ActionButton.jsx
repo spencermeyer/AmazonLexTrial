@@ -42,7 +42,6 @@ export default class ActionButton extends React.Component {
   }
 }
 
-
 class TextEntryArea extends React.Component {
     constructor(props){
       super(props)
@@ -57,5 +56,3 @@ class TextEntryArea extends React.Component {
     }
 }
 
-// let domContainer = document.querySelector('#action_button_container');
-// ReactDOM.render(<ActionButton />, domContainer);

@@ -15,12 +15,12 @@ class ActionButton extends React.Component {
       // console.log(xhr.responseText);
       this.setState({data: xhr.responseText})
     })
-    // xhr.open('GET', "http://localhost:9090/users");
     xhr.open('GET', "http://localhost:9090/lookup?number=07803937331");
     xhr.send();
   }
 
   render() {
+    console.log('hello from action button');
     if (this.state.liked) {
       return 'You liked this.';
     }
@@ -30,9 +30,6 @@ class ActionButton extends React.Component {
 
     return (
       <div>
-        <button onClick={() => this.setState({ liked: true }) }>
-          Like
-        </button>
         <button onClick={() => this.getData() }>
           GetData
         </button>
@@ -41,7 +38,6 @@ class ActionButton extends React.Component {
     );
   }
 }
-
 
 class TextEntryArea extends React.Component {
     constructor(props){
@@ -57,5 +53,5 @@ class TextEntryArea extends React.Component {
     }
 }
 
-// let domContainer = document.querySelector('#action_button_container');
-// ReactDOM.render(<ActionButton />, domContainer);
+let domContainer = document.querySelector('#action_button_container');
+ReactDOM.render(<ActionButton />, domContainer);
